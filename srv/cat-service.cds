@@ -12,6 +12,9 @@ service CatalogService {
     type Detail {
          value: Decimal(4,2);
         description: String(50); 
+        method: String(36);
+        category: String(36);
+        entity1: String(36);
     }
     
     type paramsPay {
@@ -19,9 +22,7 @@ service CatalogService {
         description : String(20);
         value  : Decimal(4, 2);
         rxh    : Boolean;
-        ir5: Detail;
-        afp: Detail;
-        payloadLiqui:Detail;
+        details:array of Detail;
     };
 
     action payDetail(context: paramsPay);

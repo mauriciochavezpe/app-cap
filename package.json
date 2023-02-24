@@ -11,7 +11,8 @@
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.19",
     "express": "^4",
     "hdb": "^0.19.5",
-    "sap-cf-axios": "^0.4.8"
+    "sap-cf-axios": "^0.4.8",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "sqlite3": "^5.0.4"

@@ -52,17 +52,20 @@ entity Pay : auditoriaBase {
       entity      : Association to Entity;
       category    : Association to Category;
       ihaveRXH    : Boolean;
-      details     : Association to Pay_details;
+      details     : Association to many Pay_details
+                      on details.pay = $self;
 }
 
 entity Pay_details {
   key ID          : UUID;
       description : String(250);
+      value       : Decimal(8, 4);
       method      : Association to Method;
       entity      : Association to Entity;
       category    : Association to Category;
-      pay     : Association to many Pay
-                      on pay.details = $self;
+      pay     : Association to Pay;
+
+      
 
 }
 

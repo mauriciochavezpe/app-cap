@@ -44,22 +44,31 @@ Content-Type: application/json
 {
 	
   	"context":{
-		"id": "7cbd1d84-b48e-11ed-afa1-0242ac120002",
+		"id": "4cbd8d85-b48e-11ed-afa1-0242ac120002",
 		"description": "prueba 12",
 		"value": 40.2,
 		"rxh":true,
-		"ir5":{
-         "value": 50.21,
-		 "description":"base1"
-    	},
-		"afp":{
-         "value": 50.21,
-		 "description":"base2"
-    	},
-		"payloadLiqui":{
-         "value": 50.21,
-		 "description":"base3"
-    	}
+		"details":[			
+		{
+		"value": 50.21,
+		 "description":"base1",
+		 "method": "f0e1c894-0be2-4d3b-85fb-746c8bac3429",
+		 "entity1": "c95e0a94-24cd-433e-b8b3-bf06991896db",
+		 "category": "c3cdce9e-91cf-4e74-bb34-ce13e38eddcf"
+    	},{
+         "value": 50.22,
+		 "description":"base1",
+		  "method": "f0e1c894-0be2-4d3b-85fb-746c8bac3429",
+		 "entity1": "c95e0a94-24cd-433e-b8b3-bf06991896db",
+		 "category": "c3cdce9e-91cf-4e74-bb34-ce13e38eddcf"
+    	},{
+         "value": 50.23,
+		 "description":"base2",
+		  "method": "f0e1c894-0be2-4d3b-85fb-746c8bac3429",
+		 "entity1": "c95e0a94-24cd-433e-b8b3-bf06991896db",
+		 "category": "c3cdce9e-91cf-4e74-bb34-ce13e38eddcf"
+    	}]
+		 
 	}
 
    

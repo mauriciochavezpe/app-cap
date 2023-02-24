@@ -3,6 +3,7 @@ const cds = require("@sap/cds");
 const { executeHttpRequest } = require('@sap-cloud-sdk/http-client');
 const SapCfAxios = require('sap-cf-axios').default;
 const axios = SapCfAxios("JSONPLACEHOLDER");
+const generateUUID = require('uuid').v4;
 
 module.exports = cds.service.impl(async (srv) => {
     //module.exports = async (srv) => {
@@ -35,6 +36,27 @@ module.exports = cds.service.impl(async (srv) => {
             "money_ID":"a64e866c-acbe-44ff-8b64-025e29c5ed6c"
             
         })
+        let operations = [];
+        for( const ele of v.details){
+            operations.push(
+                INSERT.into("MY_BOOKSHOP_PAY_DETAILS")
+                    .entries({
+                        ID: generateUUID(),
+                        DESCRIPTION: ele.description,
+                        METHOD_ID: ele.method,
+                        ENTITY_ID: ele.entity1,
+                        CATEGORY_ID: ele.category,
+                        VALUE: ele.value,
+                        PAY_ID:v.id
+                    })
+            );
+        }
+        const tx = cds.tx();
+        await tx.run(operations);
+        await tx.commit();
+
+        console.log(operations);
+
         console.log(payload);
     });
 
