@@ -1,0 +1,80 @@
+
+### Get Request
+@server = http://localhost:4004
+@credAdmin = Authorization: Basic ed.chavez.pe@gmail.com:
+
+### post Books
+POST {{server}}/catalog/Books
+Content-Type: application/json
+{{credAdmin}}
+
+{
+	
+	"ID": 3,
+  	"stock": 2,
+  	"title": "The mask"
+   
+}
+### post Method
+POST {{server}}/catalog/Type_TX
+Content-Type: application/json
+{{credAdmin}}
+
+{
+	
+  	"name": "prueba 12",
+  	"alias": "TEST2",
+	"description":"test 123",
+	"usuarioRegistro":"MCHAVEZP",
+	"activo":true
+   
+}
+
+
+### get findAll
+GET  {{server}}/catalog/findAPI()
+Content-Type: application/json
+{{credAdmin}}
+
+### post PAY
+POST {{server}}/catalog/payDetail
+Content-Type: application/json
+{{credAdmin}}
+
+{
+	
+  	"context":{
+		"id": "7cbd1d84-b48e-11ed-afa1-0242ac120002",
+		"description": "prueba 12",
+		"value": 40.2,
+		"rxh":true,
+		"ir5":{
+         "value": 50.21,
+		 "description":"base1"
+    	},
+		"afp":{
+         "value": 50.21,
+		 "description":"base2"
+    	},
+		"payloadLiqui":{
+         "value": 50.21,
+		 "description":"base3"
+    	}
+	}
+
+   
+}
+
+### post Method
+POST {{server}}/catalog/Flow
+Content-Type: application/json
+{{credAdmin}}
+
+{
+  	"name": "prueba 12",
+  	"alias": "TEST2",
+	"description":"test 123",
+	"usuarioRegistro":"MCHAVEZP",
+	"activo":true
+   
+}
